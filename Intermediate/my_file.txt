@@ -1,6 +1,4 @@
-Mi nombre es Brais
-Mi apellido es Moure
-35 años
-Y mi lenguaje preferido es Python
-Aunque también me gusta Kotlin
-Y Swift
+Mi nombre es Nicolas
+Mi apellido es Daza
+20 aÃ±os 
+adicto a las mamadas lit
