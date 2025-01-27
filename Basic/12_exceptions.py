@@ -4,7 +4,7 @@ numberOne = 5
 numbertwo = 1
 numbertwo = "1"
 
-# try except
+#Excepción base: try except
 try: 
     print(numberOne+numbertwo)
     print("No se ha producido un error ")
@@ -12,7 +12,7 @@ except:
     # Se ejecuta si no se produce una excepcion
     print("Se ha liado")
 
-# try except else finally
+#Flujo completo de una excepción: try except else finally
 try: 
     print(numberOne+numbertwo)
     print("No se ha producido un error ")
