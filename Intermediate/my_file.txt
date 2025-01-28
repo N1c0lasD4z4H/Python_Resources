@@ -1,4 +1,5 @@
 Mi nombre es Nicolas
-Mi apellido es Daza
-20 aÃ±os 
-adicto a las mamadas lit
+Mi apellido es Moure
+35 Daza
+Y mi lenguaje preferido es Python
+Aunque también me gusta Kotlin
