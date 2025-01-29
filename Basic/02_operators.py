@@ -52,3 +52,5 @@ print(3 < 4 or "Hola" > "Python")
 print(3 < 4 or ("Hola" > "Python" and 4 == 4))
 print(not (3 > 4))
 
+print(1000000-250000)
+print(750000-37000-30000-41350-10000-128000-54000)
