@@ -1,7 +1,7 @@
-from fastapi import FastAPI, HTTPException
+from fastapi import APIRouter, HTTPException
 from pydantic import BaseModel
 
-app = FastAPI()
+router = APIRouter(tags=["users"])
 
 class User(BaseModel):
     id:int
@@ -18,29 +18,29 @@ users_list = [
 
 
 
-@app.get("/usersjson")#No es lo mas habitual
+@router.get("/usersjson")#No es lo mas habitual
 async def usersjson():
     return [{"name":"Nicolas","surname":"Daza","url":"https://mouredev.com","age":20},
             {"name":"Sam","surname":"Neins","url":"https://samneins.com","age":20},
             {"name":"Nicol","surname":"Suarez","url":"https://nicol.com","age":20}]
 
-@app.get("/users")
+@router.get("/users")
 async def users():
     return users_list
 #Path
-@app.get("/user/{ide}")
+@router.get("/user/{ide}")
 async def user(ide: int):
         return search_user(ide)
     
 #Fast Api Recomienda tipar todas las variables
 #Query /?id=1&name
 
-@app.get("/userquery/")
+@router.get("/userquery/")
 async def user(id: int,name: str):
         return search_user(id)
     
 #Put para crear nuevos datos
-@app.post("/user/",response_model=User, status_code=201)
+@router.post("/user/",response_model=User, status_code=201)
 async def user(user:User):
      if type(search_user(user.id)) == User:
         
@@ -50,7 +50,7 @@ async def user(user:User):
           users_list.append(user)
           return user
 
-@app.put ("/user/")
+@router.put ("/user/")
 async def user(user: User):
      
     found = False
@@ -65,7 +65,7 @@ async def user(user: User):
     else:
          return user
 
-@app.delete("/user/{id}")
+@router.delete("/user/{id}")
 async def user(id: int):
     found = False
     for index, save_user in enumerate(users_list):
