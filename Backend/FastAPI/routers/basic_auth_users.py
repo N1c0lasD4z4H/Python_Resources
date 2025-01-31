@@ -4,7 +4,7 @@ from fastapi.security import OAuth2PasswordBearer, OAuth2PasswordRequestForm
 
 router = APIRouter(prefix="/basicauth",
                    tags=["basicauth"],
-                   responses={status.HTTP_404_NOT_FOUND: {"message": "No encontrado"}})
+                   responses={status.HTTP_404_NOT_FOUND: {"message": "encontrado"}})
 # Configuración de OAuth2
 oauth2 = OAuth2PasswordBearer(tokenUrl="login")
 
@@ -54,6 +54,7 @@ def search_user_db(username: str):
 def search_user(username: str):
     if username in users_db:
         return User(**users_db[username])
+
 
 # Función para obtener el usuario actual
 async def current_user(token: str = Depends(oauth2)):
